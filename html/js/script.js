@@ -45,7 +45,7 @@ window.addEventListener('message', (event) => {
             charKills.textContent = '0';
             charDeaths.textContent = '0';
             startBtn.disabled = true;
-            startBtnText.textContent = 'ابدأ اللعب';
+            startBtnText.textContent = 'Start';
             break;
 
         case 'setCharacter': {
