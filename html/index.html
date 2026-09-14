@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>Nabd-Multicharacter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Zain:wght@400;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="app" class="hidden">
+
+        <!-- خلفيات تقنية خفيفة جداً (الخلفية الحقيقية هي الشخصية بالعالم خلف الواجهة) -->
+        <div class="hud-scanlines"></div>
+        <div class="hud-noise"></div>
+        <div class="hud-vignette"></div>
+
+        <!-- علامات تقنية بزوايا الشاشة -->
+        <div class="corner-tag corner-tag--tl">
+            <span class="corner-dot"></span>
+            Nabd // OS
+        </div>
+        <div class="corner-tag corner-tag--tr" id="nodeTag">NODE :: 000-000</div>
+        <div class="corner-tag corner-tag--bl">SYS.Nabd-MC / v1.0</div>
+        <div class="corner-tag corner-tag--br" id="clockTag">--:--:--</div>
+
+        <!-- خطوط التوصيل (Leader Lines) بين اللابلات والشخصية -->
+        <svg class="callout-svg" viewBox="0 0 1000 562.5" preserveAspectRatio="xMidYMid slice">
+            <path id="lineName"   class="callout-line" d="M 780 90  L 700 90  L 620 230" />
+            <path id="lineDeaths" class="callout-line" d="M 220 130 L 300 130 L 380 260" />
+            <path id="lineKills"  class="callout-line" d="M 190 300 L 300 300 L 400 320" />
+
+            <circle class="callout-node" cx="780" cy="90"  r="4"/>
+            <circle class="callout-node" cx="220" cy="130" r="4"/>
+            <circle class="callout-node" cx="190" cy="300" r="4"/>
+
+            <circle class="callout-target" cx="620" cy="230" r="3.5"/>
+            <circle class="callout-target" cx="380" cy="260" r="3.5"/>
+            <circle class="callout-target" cx="400" cy="320" r="3.5"/>
+        </svg>
+
+        <!-- اللابلات -->
+        <div class="callout callout--name">
+            <span class="callout-label">الاسم</span>
+            <span class="callout-sep">::</span>
+            <span class="callout-value" id="charName">— — —</span>
+        </div>
+
+        <div class="callout callout--deaths">
+            <span class="callout-label">الوفيات</span>
+            <span class="callout-sep">::</span>
+            <span class="callout-value" id="charDeaths">0</span>
+        </div>
+
+        <div class="callout callout--kills">
+            <span class="callout-label">القتلات</span>
+            <span class="callout-sep">::</span>
+            <span class="callout-value" id="charKills">0</span>
+        </div>
+
+        <!-- شريط الحالة العلوي -->
+        <div class="status-strip">
+            <span class="status-dot" id="statusDot"></span>
+            <span class="status-text" id="statusTag">INITIALIZING...</span>
+            <span class="status-sep">/</span>
+            <span class="status-text status-mono" id="charSub">SCANNING RECORDS</span>
+        </div>
+
+        <!-- زر ابدأ -->
+        <div class="play-wrap">
+            <div class="play-ticks">
+                <span></span><span></span><span></span><span></span><span></span>
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <button id="startBtn" class="start-btn" disabled>
+                <span class="start-btn-bracket">[</span>
+                <span id="startBtnText">ابدأ اللعب</span>
+                <span class="start-btn-bracket">]</span>
+            </button>
+            <div class="press-hint">PRESS TO INITIALIZE SESSION</div>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
